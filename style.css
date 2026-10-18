@@ -1,0 +1,207 @@
+:root{
+  --main:#553235;
+  --main-light:#7a5054;
+  --text:#2b2526;
+  --sub:#6b6264;
+  --line:#e2dcdc;
+  --bg-soft:#eef0f7;
+  --white:#fff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP","Yu Gothic",Meiryo,sans-serif;
+  color:var(--text);background:var(--white);line-height:1.9;letter-spacing:.04em;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+
+/* ヘッダー */
+header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;height:84px}
+.logo img{height:60px;width:auto}
+nav ul{display:flex;align-items:center;gap:32px;list-style:none}
+nav a{text-decoration:none;font-size:15px;font-weight:600}
+nav a:hover{color:var(--main-light)}
+nav .btn-contact{background:var(--main);color:#fff;padding:12px 22px;border-radius:2px}
+nav .btn-contact:hover{background:var(--main-light);color:#fff}
+
+/* トップ */
+.hero{display:grid;grid-template-columns:2.6fr 1fr;gap:10px;margin-top:20px}
+.hero-main{position:relative;border-radius:4px;overflow:hidden;min-height:520px;
+  background:url(images/hero.jpg) center/cover}
+.hero-main::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.7),rgba(0,0,0,.15) 70%)}
+.hero-text{position:absolute;left:48px;right:48px;bottom:44px;color:#fff;z-index:1}
+.hero-text h1{font-size:46px;line-height:1.4;font-weight:700;margin-bottom:16px;word-break:keep-all;overflow-wrap:anywhere}
+.hero-text p{font-size:15px;word-break:keep-all;overflow-wrap:anywhere}
+.hero-side{display:grid;grid-template-rows:1fr 1fr 1fr;gap:10px}
+.tile{position:relative;display:block;border-radius:4px;overflow:hidden;text-decoration:none;color:#fff;min-height:160px;background-size:cover;background-position:center}
+.tile::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.3);transition:.3s}
+.tile:hover::after{background:rgba(0,0,0,.15)}
+.tile span{position:absolute;left:24px;bottom:18px;z-index:1;font-size:18px;font-weight:700}
+.tile-service{background-image:url(images/service.jpg)}
+.tile-company{background-image:url(images/building.jpg);background-position:center 30%}
+.tile-contact{background:var(--main)}
+
+/* セクション共通 */
+section{padding:110px 0}
+.sec-title{font-family:"Montserrat","Helvetica Neue",Arial,sans-serif;font-size:56px;font-weight:500;color:var(--main);line-height:1.1;letter-spacing:.02em}
+.sec-sub{display:flex;align-items:center;gap:12px;font-size:14px;margin-top:14px}
+.sec-sub::before{content:"";width:40px;height:1px;background:var(--text)}
+
+/* 事業内容 */
+.service-text{margin:48px 0 0 40px;font-size:16px}
+.products{margin-top:56px;overflow:hidden}
+.products-track{display:flex;gap:14px;width:max-content;animation:products-scroll 40s linear infinite}
+.products:hover .products-track{animation-play-state:paused}
+.products img{width:300px;max-width:none;aspect-ratio:4/3;object-fit:cover;border-radius:3px;flex:none}
+@keyframes products-scroll{from{transform:translateX(0)}to{transform:translateX(calc(-50% - 7px))}}
+@media (prefers-reduced-motion:reduce){.products-track{animation:none;flex-wrap:wrap;width:auto}.products img[aria-hidden]{display:none}}
+
+/* 会社概要・採用 */
+.two-col{display:grid;grid-template-columns:1fr 2.2fr;gap:40px}
+.info-table{width:100%;border-collapse:collapse}
+.info-table th,.info-table td{text-align:left;vertical-align:top;padding:26px 0;border-bottom:1px solid var(--line);font-size:15px}
+.info-table tr:first-child th,.info-table tr:first-child td{border-top:1px solid var(--line)}
+.info-table th{width:28%;font-weight:500;padding-right:20px}
+.wide-photo{width:100%;height:440px;object-fit:cover}
+
+/* お問い合わせ */
+.contact-box{background:var(--bg-soft);border-radius:6px;padding:72px 48px;text-align:center}
+.contact-box p{margin-top:24px}
+.tel{font-family:"Montserrat","Helvetica Neue",Arial,sans-serif;font-size:40px;font-weight:600;color:var(--main);letter-spacing:.06em;margin-top:24px}
+.tel a{text-decoration:none}
+.fax{font-size:18px;margin-top:4px}
+.contact-note{font-size:13px;color:var(--sub)}
+
+/* フッター */
+footer{background:var(--main);color:#fff;padding:72px 0 48px}
+.footer-inner{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.footer-name{font-size:20px;font-weight:700;margin-bottom:16px}
+.footer-nav{display:flex;gap:24px;list-style:none;font-size:14px;flex-wrap:wrap}
+.footer-nav a{text-decoration:none}
+.footer-bottom{display:flex;justify-content:flex-end;gap:32px;margin-top:40px;font-size:12px}
+
+/* プライバシーポリシー */
+.policy h2{font-size:20px;color:var(--main);margin:40px 0 10px}
+.policy ul{margin:10px 0 0 24px}
+.policy .date{text-align:right;margin-top:48px}
+
+/* スマホ */
+@media (max-width:900px){
+  .header-inner{height:68px}
+  .logo img{height:46px}
+  nav ul{gap:14px}
+  nav li:not(:last-child){display:none}
+  .hero{grid-template-columns:1fr}
+  .hero-main{min-height:420px}
+  .hero-text{left:24px;right:24px;bottom:28px}
+  .hero-text h1{font-size:30px}
+  .hero-side{grid-template-rows:none;grid-template-columns:1fr}
+  .tile{min-height:120px}
+  section{padding:72px 0}
+  .sec-title{font-size:40px}
+  .service-text{margin-left:0}
+  .products img{width:220px}
+  .two-col{grid-template-columns:1fr;gap:24px}
+  .info-table th{width:32%}
+  .wide-photo{height:240px}
+  .contact-box{padding:48px 20px}
+  .tel{font-size:30px}
+  .footer-bottom{justify-content:flex-start;flex-wrap:wrap}
+}
+
+/* 現在のページ */
+nav a[aria-current="page"]:not(.btn-contact){color:var(--main);border-bottom:2px solid var(--main);padding-bottom:4px}
+
+/* トップの採用・お知らせカード */
+.link-cards{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.link-card{position:relative;display:flex;flex-direction:column;gap:4px;padding:40px 40px 36px;background:var(--bg-soft);border-radius:6px;text-decoration:none;transition:background .2s}
+.link-card:hover{background:#e3e6f0}
+.link-en{font-family:"Montserrat","Helvetica Neue",Arial,sans-serif;font-size:36px;font-weight:500;color:var(--main);line-height:1.2}
+.link-ja{font-size:13px;margin-bottom:12px}
+.link-text{font-size:14px;padding-right:48px}
+.link-arrow{position:absolute;right:32px;bottom:32px;width:36px;height:36px;border:1px solid var(--main);display:grid;place-items:center;color:var(--main)}
+
+/* 採用ページの問い合わせ */
+.page-contact{margin-top:40px;padding:32px;background:var(--bg-soft);border-radius:6px;text-align:center}
+.page-contact .tel{margin-top:8px;font-size:32px}
+
+/* お知らせ */
+.news-list{list-style:none;border-top:1px solid var(--line)}
+.news-item{padding:28px 0;border-bottom:1px solid var(--line)}
+.news-item time{font-family:"Montserrat","Helvetica Neue",Arial,sans-serif;font-size:14px;color:var(--sub);font-variant-numeric:tabular-nums}
+.news-item h2{font-size:18px;margin:6px 0 8px;color:var(--text)}
+.news-item p{font-size:15px}
+
+@media (max-width:900px){
+  .link-cards{grid-template-columns:1fr}
+  .link-card{padding:28px 24px}
+  .link-en{font-size:28px}
+}
+
+/* お問い合わせ */
+.btn-main{display:inline-block;margin-top:28px;background:var(--main);color:#fff;text-decoration:none;padding:16px 36px;border-radius:2px;font-weight:600}
+.btn-main:hover{background:var(--main-light)}
+.contact-tel{padding:28px;background:var(--bg-soft);border-radius:6px;text-align:center}
+.contact-tel .tel{margin-top:4px;font-size:32px}
+.contact-form-title{font-size:20px;color:var(--main);margin:48px 0 8px}
+.contact-form-lead{font-size:14px;margin-bottom:24px}
+.form-wrap iframe{width:100%;min-height:1400px;border:0}
+.form-pending{padding:24px;border:1px dashed var(--line);text-align:center;color:var(--sub)}
+.contact-page{min-width:0}
+
+/* 採用・お問い合わせ（Studio版と同じデザイン） */
+.cta-box{position:relative;background:var(--bg-soft);border-radius:4px;padding:160px 7% 90px;overflow:hidden}
+.cta-bg{position:absolute;left:0;right:0;top:70px;text-align:center;font-family:"Montserrat","Helvetica Neue",Arial,sans-serif;font-weight:500;font-size:clamp(64px,13vw,170px);line-height:1;letter-spacing:.04em;color:#c9c1c6;pointer-events:none;white-space:nowrap}
+.cta-cards{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.cta-card{position:relative;display:flex;flex-direction:column;background:rgba(255,255,255,.88);border-radius:4px;padding:40px 40px 36px;text-decoration:none;min-height:210px;transition:box-shadow .2s}
+.cta-card:hover{box-shadow:0 6px 24px rgba(85,50,53,.12)}
+.cta-en{font-family:"Montserrat","Helvetica Neue",Arial,sans-serif;font-size:38px;font-weight:500;color:var(--main);line-height:1.15}
+.cta-ja{font-size:13px;margin:4px 0 20px}
+.cta-text{font-size:14px;line-height:2;padding-right:56px;word-break:keep-all;overflow-wrap:anywhere}
+.cta-arrow{position:absolute;right:36px;bottom:36px;width:34px;height:34px;border:1px solid var(--text);display:grid;place-items:center;font-size:14px}
+@media (max-width:900px){
+  .cta-box{padding:80px 16px 24px}
+  .cta-bg{top:30px}
+  .cta-cards{grid-template-columns:1fr}
+  .cta-card{padding:28px 24px;min-height:0}
+  .cta-en{font-size:30px}
+  .cta-arrow{right:20px;bottom:20px}
+  .cta-card{padding-bottom:72px}
+  .cta-text{padding-right:0;font-size:13px;letter-spacing:.02em}
+  .pc-br{display:none}
+}
+
+/* スマホ用メニュー（≡ボタン） */
+.menu-btn{display:none;width:44px;height:44px;border:0;background:var(--main);border-radius:2px;cursor:pointer;flex-direction:column;justify-content:center;align-items:center;gap:5px}
+.menu-btn span{display:block;width:20px;height:2px;background:#fff}
+.sp-menu{position:fixed;inset:0;z-index:100;background:rgba(43,37,38,.45);padding:12px}
+.sp-menu-panel{margin-left:auto;max-width:420px;height:100%;overflow-y:auto;background:var(--main);color:#fff;border-radius:6px;animation:sp-in .25s ease}
+@keyframes sp-in{from{transform:translateX(30px);opacity:0}to{transform:none;opacity:1}}
+.sp-menu-head{display:flex;justify-content:space-between;align-items:center;padding:22px 28px;border-bottom:1px solid rgba(255,255,255,.2);font-size:18px;font-weight:700}
+.menu-close{background:none;border:0;color:#fff;font-size:20px;cursor:pointer;width:40px;height:40px}
+.sp-menu ul{list-style:none}
+.sp-menu li a{display:flex;align-items:baseline;gap:16px;padding:22px 28px;border-bottom:1px solid rgba(255,255,255,.2);text-decoration:none;font-weight:600;font-size:15px}
+.sp-menu li small{font-family:"Montserrat","Helvetica Neue",Arial,sans-serif;font-size:12px;font-weight:500;letter-spacing:.1em;opacity:.85}
+.sp-menu-contact{display:block;margin:24px 28px;padding:16px;background:#fff;color:var(--main);text-align:center;text-decoration:none;font-weight:700;border-radius:2px}
+.menu-btn:focus-visible,.menu-close:focus-visible{outline:2px solid var(--main-light);outline-offset:2px}
+@media (max-width:900px){
+  nav{display:none}
+  .menu-btn{display:flex}
+}
+@media (prefers-reduced-motion:reduce){.sp-menu-panel{animation:none}}
+
+/* トップのお知らせ */
+.top-news{min-width:0}
+.news-row a{display:flex;gap:32px;padding:24px 0;text-decoration:none;align-items:baseline}
+.news-row a:hover span{color:var(--main-light);text-decoration:underline}
+.news-row time{font-family:"Montserrat","Helvetica Neue",Arial,sans-serif;font-size:14px;color:var(--sub);flex:none;font-variant-numeric:tabular-nums}
+.news-row{border-bottom:1px solid var(--line)}
+.news-empty{padding:24px 0;border-bottom:1px solid var(--line);color:var(--sub)}
+.news-more{display:inline-block;margin-top:24px;color:var(--main);font-weight:600;text-decoration:none}
+.news-more:hover{text-decoration:underline}
+@media (max-width:900px){.news-row a{flex-direction:column;gap:4px}}
+
+.nw{white-space:nowrap}

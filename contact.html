@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>お問い合わせ｜株式会社 折元</title>
+<meta name="description" content="株式会社折元へのお問い合わせ。お電話・FAX・メールフォームで受け付けています。">
+<link rel="icon" href="images/favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="container header-inner">
+    <a href="index.html" class="logo"><img src="images/logo.png" alt="株式会社 折元 ORIMOTO"></a>
+    <nav>
+      <ul>
+        <li><a href="index.html#service">事業内容</a></li>
+        <li><a href="index.html#company">会社概要</a></li>
+        <li><a href="recruit.html">採用情報</a></li>
+        <li><a href="news.html">お知らせ</a></li>
+        <li><a href="contact.html" class="btn-contact" aria-current="page">✉ お問い合わせ</a></li>
+      </ul>
+    </nav>
+    <button class="menu-btn" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="sp-menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="sp-menu" id="sp-menu" hidden>
+  <div class="sp-menu-panel" role="dialog" aria-label="メニュー">
+    <div class="sp-menu-head">
+      <span>株式会社 折元</span>
+      <button class="menu-close" type="button" aria-label="メニューを閉じる">✕</button>
+    </div>
+    <ul>
+      <li><a href="index.html#service">事業内容<small>SERVICE</small></a></li>
+      <li><a href="index.html#company">会社情報<small>COMPANY</small></a></li>
+      <li><a href="news.html">お知らせ<small>NEWS</small></a></li>
+      <li><a href="recruit.html">採用情報<small>RECRUIT</small></a></li>
+    </ul>
+    <a href="contact.html" class="sp-menu-contact">✉ お問い合わせ</a>
+  </div>
+</div>
+
+<main>
+  <section>
+    <div class="container two-col">
+      <div>
+        <h1 class="sec-title">CONTACT</h1>
+        <p class="sec-sub">お問い合わせ</p>
+      </div>
+      <div class="contact-page">
+        <div class="contact-tel">
+          <p>お電話・FAXでのお問い合わせ</p>
+          <div class="tel"><a href="tel:0663821566">TEL 06-6382-1566</a></div>
+          <div class="fax">FAX 06-6382-7885</div>
+        </div>
+
+        <h2 class="contact-form-title">メールフォームでのお問い合わせ</h2>
+        <p class="contact-form-lead">下記フォームにご入力のうえ、送信してください。内容を確認のうえ、担当者よりご連絡いたします。<br>
+        ご入力いただいた個人情報は<a href="privacy.html">プライバシーポリシー</a>に基づき適切に取り扱います。</p>
+
+        <div class="form-wrap">
+          <!-- ▼ Googleフォームの埋め込みコード（<iframe 〜 </iframe>）をここに貼り付け -->
+          <p class="form-pending">メールフォームは準備中です。お手数ですがお電話・FAXにてお問い合わせください。</p>
+          <!-- ▲ ここまで（貼り付けたら上の「準備中」の1行は削除） -->
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-name">株式会社 折元</div>
+        <p>〒564-0043　大阪府吹田市南吹田1-19-23<br>TEL. 06-6382-1566　/　FAX. 06-6382-7885</p>
+      </div>
+      <ul class="footer-nav">
+        <li><a href="index.html#service">事業内容</a></li>
+        <li><a href="index.html#company">会社概要</a></li>
+        <li><a href="recruit.html">採用情報</a></li>
+        <li><a href="news.html">お知らせ</a></li>
+        <li><a href="contact.html">お問い合わせ</a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      <a href="privacy.html">プライバシーポリシー</a>
+      <span>© 2026 株式会社 折元</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var btn=document.querySelector('.menu-btn'),menu=document.getElementById('sp-menu');
+  if(!btn||!menu)return;
+  function open(){menu.hidden=false;btn.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';}
+  function close(){menu.hidden=true;btn.setAttribute('aria-expanded','false');document.body.style.overflow='';}
+  btn.addEventListener('click',open);
+  menu.querySelector('.menu-close').addEventListener('click',close);
+  menu.addEventListener('click',function(e){if(e.target===menu||e.target.closest('a'))close();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+})();
+</script>
+</body>
+</html>
