@@ -42,7 +42,7 @@ nav .btn-contact:hover{background:var(--main-light);color:#fff}
 .tile span{position:absolute;left:24px;bottom:18px;z-index:1;font-size:18px;font-weight:700}
 .tile-service{background-image:url(images/service.jpg)}
 .tile-company{background-image:url(images/building.jpg);background-position:center 30%}
-.tile-contact{background:var(--main)}
+.tile-contact{background-color:var(--main);background-image:url(images/contact.jpg);background-position:center 40%}
 
 /* セクション共通 */
 section{padding:110px 0}
