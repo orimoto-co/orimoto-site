@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://orimoto-3db.pages.dev/sitemap.xml
